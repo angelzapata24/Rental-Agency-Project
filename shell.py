@@ -6,12 +6,20 @@ def main():
     time.sleep(1)
     print("Canopy tents are a light weight structure, they are great for protection from sun or light rain. They are to be installed and removed by you, the renter.\n")
     time.sleep(1)
-    tent = input('Would you like to rent a tent or tents today? 1: yes 2: no')
-    if tent == '1':
-        print('Great, here are the tents we have avaliable. You can choose to just rent the tent or have chairs and tables included with them.')
+    tent = input('Canopy tents are available to rent up to 3 days. Would you like to rent a tent or tents today? 1: yes 2: no\n')
+    if tent == '2':
+        print("That's fine, come back again if you change your mind!")
+     
+    elif tent == '1':
+            print('Great, here are the tent sizes we have available. You can choose to just rent the tent or have chairs and tables included with them.\n')
+            print('\n'.join(core.type_of_tents()))
+            tent1 = input('Tent:')
+            tents = core.cost_of_tents(tent)
+            if tent1 == tents:
+                print(tents)
+
 
     
-
 
 
 
