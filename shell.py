@@ -14,9 +14,9 @@ def main():
             print('Great, here are the tent sizes we have available. You can choose to just rent the tent or have chairs and tables included with them.\n')
             print('\n'.join(core.type_of_tents()))
             tent1 = input('Tent:')
-            tents = core.cost_of_tents(tent)
-            if tent1 == tents:
-                print(tents)
+            tents = core.cost_of_tents(tent1)
+            print('Tent ' + tent1 + ' price is $' + str(tents) + ' dollars.\n')
+            
 
 
     
