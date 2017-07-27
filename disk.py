@@ -14,3 +14,4 @@ def in_history():
         split_string = line.strip().split(', ')
         left.append([split_string[0], float(split_string[1].strip().replace('$', ''))])
     return left
+ 
