@@ -56,8 +56,19 @@ def cost_of_tents(tent):
     elif tent == '12' or tent.lower() == 'twelve':
         return tent12 
 
-def total(tent):
+def deposit(tents):
+    """deposit for every tent
+    >>> deposit(50)
+    55.0
+    >>> deposit(75)
+    82.5
+    """
+    return (float(tents) * float(.1)) + float(tents)
+
+def total(tents):
     """ returns the total price of a tent, tent price plus
     deposit plus sales tax.
-    >>> total(1)
+    >>> total(50)
+    53.5
     """
+    return (float(tents) * float(.07)) + float(tents)
