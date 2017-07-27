@@ -11,8 +11,14 @@ def type_of_tents():
     return tent_sizes
 
 def cost_of_tents(tent):
-    ''' Prices of the avalible tents'''
-    tent1 = 50 
+    ''' string -> string 
+    Prices of the avalible tents
+    >>> cost_of_tents(1)
+    50
+    >>> cost_of_tents(12)
+    330    
+    '''
+    tent1 = 50   
     tent2 = 75
     tent3 = 82
     tent4 = 115
@@ -23,7 +29,7 @@ def cost_of_tents(tent):
     tent9 = 132
     tent10 = 165
     tent11 = 220
-    tent12 = 335
+    tent12 = 330
 
     if tent == '1' or tent.lower() == 'one':
         return tent1 
@@ -50,12 +56,8 @@ def cost_of_tents(tent):
     elif tent == '12' or tent.lower() == 'twelve':
         return tent12 
 
-def tents_chair_tables(tents):
-    tent1 = 75
-    tent2 = 125
-    tent3 = 132
-    tent4 = 165
-    tent5 = 220
-    tent6 = 335
-
-
+def total(tent):
+    """ returns the total price of a tent, tent price plus
+    deposit plus sales tax.
+    >>> total(1)
+    """
