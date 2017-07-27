@@ -16,9 +16,11 @@ def main():
             tent1 = input('Tent: \n')
             tents = core.cost_of_tents(tent1)
             con = input('\nTent ' + tent1 + ' price is $' + str(tents) + ' dollars. Would you like to continue?\n')
+            tent2 = core.deposit(tents)
+            tent3 = core.total(tents)
             if con == 'yes':
-                total = float(core.deposit(tent1)) + float(core.total(tent1)) + float(tents)
-                print('your total with deposit and tax is' + str(float(total)))
+                total = (float(tent2) + float(tent3)) + float(tents)
+                print('your total with deposit and tax is $' + str(float(total)))
         
 
 
