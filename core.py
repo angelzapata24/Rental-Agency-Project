@@ -76,3 +76,5 @@ def total(tents):
     """
     tent = (float(tents) * float(0.07))
     return round(tent, 2)
+
+
