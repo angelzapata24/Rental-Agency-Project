@@ -1,13 +1,13 @@
-tent, size
-tent1, 10x10 0 0
-tent2, 10x20 0 0
-tent3, 16X16 0 0
-tent4, 20X20 0 0
-tent5, 20X30 0 0
-tent6, 20X40 0 0
-tent7, 10x10 6 1
-tent8, 10x20 15 3
-tent9, 16X16 20 5
-tent10, 20X20 40 6
-tent11, 20X30 55 7
-tent12, 20X40 70 8
+tent number:, cost:, amount of tents avalaible:
+1, 50, 0
+2, 75, 0
+3, 82, 0
+4, 115, 5
+5, 170, 5
+6, 285, 5
+7, 75, 5
+8, 125, 5
+9, 132, 5
+10, 165, 5
+11, 220, 5
+12, 335, 5
