@@ -22,20 +22,20 @@ def in_inventory():
         lines = file.readlines()
     for line in lines:
         split_string = line.strip().split(', ')
-        left.append([(split_string[0]), (split_string[1])])
+        left.append([(split_string[0]), (split_string[1]), (split_string[2])])
     return left
 
-def take_away(tent, size):
-    str_l = ['tent, size']
+def take_away(tent1, not1):
+    str_l = ['tent number:, cost:, amount of tents avalaible:']
     left = in_inventory()
     for item in left:
-        if item == tent:
-            if float(amount) > float(item[1]):
+        if item[0] == tent1:
+            if int(not1) > int(item[2]):
                 return False
             else:
-                item[1] = float(item[1]) - float(amount)
-        item[0] = str(item[0])
+                item[2] = int(item[2]) - int(not1)
         item[1] = str(item[1])
+        item[2] = str(item[2])
         str_l.append(', '.join(item))
         message = '\n'.join(str_l)
 
