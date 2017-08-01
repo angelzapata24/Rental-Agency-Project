@@ -44,12 +44,12 @@ def take_away(tent1, amount):
     return True
 
 
-def refill():
+def refill(type_tent, how_many):
     str_l = ['tent number:, cost:, amount of tents avalaible:']
     left = in_inventory()
     for item in left:
-        if item[2] < str(5):
-            item[2] = 5
+        if item[0] == type_tent:
+            item[2] = int(how_many) + int(item[2])
         item[1]=str(item[1])
         item[2]= str(item[2])
         str_l.append(', '.join(item))
