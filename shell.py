@@ -28,13 +28,16 @@ def main():
                         print('\nGreat, here are the tent sizes we have available. You can choose to just rent the tent or have chairs and tables included with them.\n')
                         print('\n'.join(core.type_of_tents()))
                         tent1 = input('Tent: \n')
+                        if int(tent1) >= int(13) or int(tent1) <= int(0):
+                            print('Invalid Tent number.')
+                            break
                         tents = core.cost_of_tents(tent1)
-                        amount = input('\n How many tents of this type would you like?')
+                        amount = input('\nHow many tents of this type would you like?\n')
                         tent_1 = float(amount) * float(tents)
+                        con = input('\nTent ' + tent1 + ' price is $' + str(tent_1) + ' dollars. Would you like to continue?\n')
                         if not disk.take_away(tent1, amount):
                             print('Sorry, we do not have this type of tent available.')
                             return None
-                        con = input('\nTent ' + tent1 + ' price is $' + str(tent_1) + ' dollars. Would you like to continue?\n')
                         tent2 = core.deposit(tent_1)
                         tent3 = core.total(tent_1)
                         tent4 = tent_1 * 2
@@ -46,20 +49,21 @@ def main():
                                 print('Your renting this for 1 day, your total with deposit and tax is $' + str(float(total)))
                                 history = disk.keep_history(tent1, total)
                                 print('Thank you')
+                                return None
                             elif days == '2':
                                 print('\nYour renting this for 2 days, your total with deposit and tax is $' + str(float(total2)))
                                 history = disk.keep_history(tent1, total2)
                                 print('Thank you')
-                                break
-        elif rent_return == '2':
+                                return None
+        while rent_return == '2':
             type_tent = input('What tents are you returning? From type 1-12.\nTent: ')
             tents = core.cost_of_tents(type_tent)
             how_many = input('How many of this tents are you returning?\n')
             u = float(how_many) * float(tents) 
             deposit = core.deposit(u)
-            disk.refill()
+            disk.refill(type_tent, how_many)
             print('Thank you! your deposit that you are getting back is $' + str(float(deposit)) + '. Come back for more tents soon!')
-            break 
+            return None 
             
         
     else:
