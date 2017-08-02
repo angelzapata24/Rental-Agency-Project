@@ -2,14 +2,14 @@ def type_of_tents():
     """ str -> str
     tent sizes 
     >>> type_of_tents()
-    ['Tent 1 = 10X10\\t\\tTent 7 = 10X10 w/ 6 chairs & 1 table', 'Tent 2 = 10X20\\t\\tTent 8 = 10X20 w/ 15 chairs & 3 tables', 'Tent 3 = 16X16\\t\\tTent 9 = 10X20 w/ 20 chairs & 4 tables', 'Tent 4 = 20X20\\t\\tTent 10 = 10X20 w/ 40 chairs & 6 tables', 'Tent 5 = 20X30\\t\\tTent 11 = 10X20 w/ 55 chairs & 7 tables', 'Tent 6 = 20X40\\t\\tTent 12 = 10X20 w/ 70 chairs & 8 tables']
+    ['Tent 1 = 10X10\\t\\tTent 7 = 10X10 w/ 6 chairs & 1 table', 'Tent 2 = 10X20\\t\\tTent 8 = 10X20 w/ 15 chairs & 3 tables', 'Tent 3 = 16X16\\t\\tTent 9 = 16X16 w/ 20 chairs & 4 tables', 'Tent 4 = 20X20\\t\\tTent 10 = 20X20 w/ 40 chairs & 6 tables', 'Tent 5 = 20X30\\t\\tTent 11 = 20X30 w/ 55 chairs & 7 tables', 'Tent 6 = 20X40\\t\\tTent 12 = 20X40 w/ 70 chairs & 8 tables']
     """
     tent_sizes = ['Tent 1 = 10X10\t\t' 'Tent 7 = 10X10 w/ 6 chairs & 1 table',
     'Tent 2 = 10X20\t\t' 'Tent 8 = 10X20 w/ 15 chairs & 3 tables',
-    'Tent 3 = 16X16\t\t' 'Tent 9 = 10X20 w/ 20 chairs & 4 tables',
-    'Tent 4 = 20X20\t\t' 'Tent 10 = 10X20 w/ 40 chairs & 6 tables',
-    'Tent 5 = 20X30\t\t' 'Tent 11 = 10X20 w/ 55 chairs & 7 tables',
-    'Tent 6 = 20X40\t\t' 'Tent 12 = 10X20 w/ 70 chairs & 8 tables']
+    'Tent 3 = 16X16\t\t' 'Tent 9 = 16X16 w/ 20 chairs & 4 tables',
+    'Tent 4 = 20X20\t\t' 'Tent 10 = 20X20 w/ 40 chairs & 6 tables',
+    'Tent 5 = 20X30\t\t' 'Tent 11 = 20X30 w/ 55 chairs & 7 tables',
+    'Tent 6 = 20X40\t\t' 'Tent 12 = 20X40 w/ 70 chairs & 8 tables']
     return tent_sizes
 
 def cost_of_tents(tent):
