@@ -77,4 +77,49 @@ def total(tents):
     tent = (float(tents) * float(0.07))
     return round(tent, 2)
 
+def actual_cost(tent):
+    ''' string -> string 
+    Prices of the avalible tents
+    >>> actual_cost('1')
+    150
+    >>> actual_cost('12')
+    1005
+    '''
+    tent1 = 150
+    tent2 = 225
+    tent3 = 246
+    tent4 = 345
+    tent5 = 510
+    tent6 = 855
+    tent7 = 225
+    tent8 = 375
+    tent9 = 396
+    tent10 = 495
+    tent11 = 660
+    tent12 = 1005
+
+    if tent == '1' or tent.lower() == 'one':
+        return tent1
+    elif tent == '2' or tent.lower() == 'two':
+        return tent2
+    elif tent == '3' or tent.lower() == 'three':
+        return tent3
+    elif tent == '4' or tent.lower() == 'four':
+        return tent4
+    elif tent == '5' or tent.lower() == 'five':
+        return tent5
+    elif tent == '6' or tent.lower() == 'six':
+        return tent6
+    elif tent == '7' or tent.lower() == 'seven':
+        return tent7
+    elif tent == '8' or tent.lower() == 'eight':
+        return tent8
+    elif tent == '9' or tent.lower() == 'nine':
+        return tent9
+    elif tent == '10' or tent.lower() == 'ten':
+        return tent10
+    elif tent == '11' or tent.lower() == 'eleven':
+        return tent11
+    elif tent == '12' or tent.lower() == 'twelve':
+        return tent12 
 
