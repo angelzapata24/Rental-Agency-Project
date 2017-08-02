@@ -52,3 +52,39 @@ def test_type_of_tents():
     'Tent 4 = 20X20\t\t' 'Tent 10 = 10X20 w/ 40 chairs & 6 tables',
     'Tent 5 = 20X30\t\t' 'Tent 11 = 10X20 w/ 55 chairs & 7 tables',
     'Tent 6 = 20X40\t\t' 'Tent 12 = 10X20 w/ 70 chairs & 8 tables']
+
+def test_actual_cost():
+    assert core.actual_cost('1') == 150
+
+def test_actual_cost2():
+    assert core.actual_cost('2') == 225
+
+def test_actual_cost3():
+    assert core.actual_cost('3') == 246
+
+def test_actual_cost4():
+    assert core.actual_cost('4') == 345
+
+def test_actual_cost5():
+    assert core.actual_cost('5') == 510
+
+def test_actual_cost6():
+    assert core.actual_cost('6') == 855
+
+def test_actual_cost7():
+    assert core.actual_cost('7') == 225
+
+def test_actual_cost8():
+    assert core.actual_cost('8') == 375
+
+def test_actual_cost9():
+    assert core.actual_cost('9') == 396
+
+def test_actual_cost10():
+    assert core.actual_cost('10') == 495
+
+def test_actual_cost11():
+    assert core.actual_cost('11') == 660
+
+def test_actual_cost12():
+    assert core.actual_cost('12') == 1005
