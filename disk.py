@@ -1,9 +1,11 @@
 import core
 
+
 def keep_history(tent_size, amount):
     message = '\n{}, ${:.2f}'.format(tent_size, amount)
     with open('history.txt', 'a') as file:
         file.write(message)
+
 
 def in_history():
     left = []
@@ -12,9 +14,12 @@ def in_history():
         lines = file.readlines()
     for line in lines:
         split_string = line.strip().split(', ')
-        left.append([split_string[0], float(split_string[1].strip().replace('$', ''))])
+        left.append(
+            [split_string[0],
+             float(split_string[1].strip().replace('$', ''))])
     return left
- 
+
+
 def in_inventory():
     left = []
     with open('inventory.txt', 'r') as file:
@@ -24,6 +29,7 @@ def in_inventory():
         split_string = line.strip().split(', ')
         left.append([(split_string[0]), (split_string[1]), (split_string[2])])
     return left
+
 
 def take_away(tent1, amount):
     str_l = ['tent number:, cost:, amount of tents avalaible:']
@@ -39,7 +45,7 @@ def take_away(tent1, amount):
         str_l.append(', '.join(item))
         message = '\n'.join(str_l)
 
-    with open('inventory.txt', 'w') as file: 
+    with open('inventory.txt', 'w') as file:
         file.write(message)
     return True
 
@@ -50,10 +56,22 @@ def refill(type_tent, how_many):
     for item in left:
         if item[0] == type_tent:
             item[2] = int(how_many) + int(item[2])
-        item[1]=str(item[1])
-        item[2]= str(item[2])
+        item[1] = str(item[1])
+        item[2] = str(item[2])
         str_l.append(', '.join(item))
-        message = '\n'.join(str_l)  
+        message = '\n'.join(str_l)
 
     with open('inventory.txt', 'w') as file:
         file.write(message)
+
+
+def revenue_log():
+    """return float value of total dollars spent"""
+    price = 0
+    with open('history.txt', 'r') as file:
+        file.readline
+        lines = file.readline
+        for item in lines:
+            item[1] = float(item[1]) + float(item[1])
+            price += item[1]
+    return price
