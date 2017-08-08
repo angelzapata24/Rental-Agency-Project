@@ -135,11 +135,15 @@ def main():
             u = float(how_many) * float(tents)
             deposit = core.deposit(u)
             disk.refill(type_tent, how_many)
+            disk.keep_history(type_tent, (-(deposit)))
             print('Thank you! your deposit that you are getting back is $' +
                   str(float(deposit)) + '. Come back for more tents soon!')
             return None
 
     elif rent_return == '3':
+        code = input('Please enter your code to view the total revenue')
+        if code == '222':
+            print('Your total revenue is ${:.2f}'.format(disk.revenue_log()))
 
 
 if __name__ == '__main__':
