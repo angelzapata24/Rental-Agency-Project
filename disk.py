@@ -7,20 +7,6 @@ def keep_history(tent_size, amount):
         file.write(message)
 
 
-# def in_history():
-#     left = []
-#     with open('history.txt', 'r') as file:
-#         file.readline()
-#         lines = file.readlines()
-#     for line in lines:
-#         split_string = line.strip().split(', ')
-#         left.append([
-#             split_string[0],
-#             int(str(split_string[1].strip().replace('$', '')))
-#         ])
-#     return left
-
-
 def in_history_revenue():
     with open('history.txt', 'r') as file:
         file.readline()
