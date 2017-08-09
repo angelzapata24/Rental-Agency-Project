@@ -59,12 +59,12 @@ def main():
                 while True:
                     amount = input(
                         '\nHow many tents of this type would you like?\n')
-                    if not amount.strip().isnumeric():
-                        print("\nSorry, invalid choice!")
-                        continue
-                    elif not disk.take_away(tent1, amount):
+                    if not disk.take_away(tent1, amount):
                         print(
                             '\nSorry we dont have this much tents available.')
+                        continue
+                    elif not amount.strip().isnumeric():
+                        print("\nSorry, invalid choice!")
                         continue
                     elif amount.strip().isnumeric():
                         break
@@ -74,16 +74,13 @@ def main():
                 tent_actual = float(amount) * float(actual_price)
                 while True:
                     con = input('\nTent ' + tent1 + ' price is $' + str(tent_1)
-                                + ' dollars. Press "1" to continue.\n')
-                    if not con.strip().isnumeric():
-                        print('\nInvalid Choice')
-                        continue
-                    elif con != '1':
+                                + ' dollars. Enter "1" to continue.\n')
+                    if con != '1':
                         print("\nInvalid Choice, please enter '1'")
                         continue
-                    elif disk.take_away(tent1, amount):
-                        break
                     elif con == '1':
+                        break
+                    elif disk.take_away(tent1, amount):
                         break
                     else:
                         print('\nInvalid choice')
@@ -108,7 +105,9 @@ def main():
                         print('Thank you')
                         return None
                     elif days == '2':
-                        print('\nYou are renting this for 2 days')
+                        print(
+                            '\nYou are renting this for 2 days, This will double your tent price.'
+                        )
                         print(
                             'Deposit is **10%** of original price which is: $'
                             + str(float(tent2)))
@@ -122,8 +121,9 @@ def main():
                         print('Invalid choice')
     elif rent_return == '2':
         while True:
+            print('\n\n'.join(core.type_of_tents()))
             type_tent = input(
-                'What tents are you returning? From type 1-12.\nTent: ')
+                '\n\nWhat tents are you returning? From type 1-12.\nTent: ')
             if not type_tent.strip().isnumeric():
                 print("Sorry, invalid choice!")
                 continue
@@ -141,9 +141,18 @@ def main():
             return None
 
     elif rent_return == '3':
-        code = input('Please enter your code to view the total revenue')
-        if code == '222':
-            print('Your total revenue is ${:.2f}'.format(disk.revenue_log()))
+        all_numbers = disk.in_history_revenue()
+        while True:
+            code = input(
+                'Please enter your code to view the total revenue. Code is "222"\n'
+            )
+            everything = core.sum_all(all_numbers)
+            if code == '222':
+                print('Your total revenue is ${:.2f}'.format(everything))
+                break
+            else:
+                print('Wrong Code. Try again')
+                continue
 
 
 if __name__ == '__main__':
