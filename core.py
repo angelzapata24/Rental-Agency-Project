@@ -4,23 +4,27 @@ def type_of_tents():
     >>> type_of_tents()
     ['Tent 1 = 10X10\\t\\tTent 7 = 10X10 w/ 6 chairs & 1 table', 'Tent 2 = 10X20\\t\\tTent 8 = 10X20 w/ 15 chairs & 3 tables', 'Tent 3 = 16X16\\t\\tTent 9 = 16X16 w/ 20 chairs & 4 tables', 'Tent 4 = 20X20\\t\\tTent 10 = 20X20 w/ 40 chairs & 6 tables', 'Tent 5 = 20X30\\t\\tTent 11 = 20X30 w/ 55 chairs & 7 tables', 'Tent 6 = 20X40\\t\\tTent 12 = 20X40 w/ 70 chairs & 8 tables']
     """
-    tent_sizes = ['Tent 1 = 10X10\t\t' 'Tent 7 = 10X10 w/ 6 chairs & 1 table',
-    'Tent 2 = 10X20\t\t' 'Tent 8 = 10X20 w/ 15 chairs & 3 tables',
-    'Tent 3 = 16X16\t\t' 'Tent 9 = 16X16 w/ 20 chairs & 4 tables',
-    'Tent 4 = 20X20\t\t' 'Tent 10 = 20X20 w/ 40 chairs & 6 tables',
-    'Tent 5 = 20X30\t\t' 'Tent 11 = 20X30 w/ 55 chairs & 7 tables',
-    'Tent 6 = 20X40\t\t' 'Tent 12 = 20X40 w/ 70 chairs & 8 tables']
+    tent_sizes = [
+        'Tent 1 = 10X10\t\t'
+        'Tent 7 = 10X10 w/ 6 chairs & 1 table', 'Tent 2 = 10X20\t\t'
+        'Tent 8 = 10X20 w/ 15 chairs & 3 tables', 'Tent 3 = 16X16\t\t'
+        'Tent 9 = 16X16 w/ 20 chairs & 4 tables', 'Tent 4 = 20X20\t\t'
+        'Tent 10 = 20X20 w/ 40 chairs & 6 tables', 'Tent 5 = 20X30\t\t'
+        'Tent 11 = 20X30 w/ 55 chairs & 7 tables', 'Tent 6 = 20X40\t\t'
+        'Tent 12 = 20X40 w/ 70 chairs & 8 tables'
+    ]
     return tent_sizes
 
+
 def cost_of_tents(tent):
-    ''' string -> string 
+    ''' string -> int 
     Prices of the avalible tents
     >>> cost_of_tents('1')
     50
     >>> cost_of_tents('12')
     335
     '''
-    tent1 = 50   
+    tent1 = 50
     tent2 = 75
     tent3 = 82
     tent4 = 115
@@ -34,7 +38,7 @@ def cost_of_tents(tent):
     tent12 = 335
 
     if tent == '1' or tent.lower() == 'one':
-        return tent1 
+        return tent1
     elif tent == '2' or tent.lower() == 'two':
         return tent2
     elif tent == '3' or tent.lower() == 'three':
@@ -56,10 +60,12 @@ def cost_of_tents(tent):
     elif tent == '11' or tent.lower() == 'eleven':
         return tent11
     elif tent == '12' or tent.lower() == 'twelve':
-        return tent12 
+        return tent12
+
 
 def deposit(tents):
-    """deposit for every tent
+    """int -> float
+    deposit for every tent
     >>> deposit(50)
     5.0
     >>> deposit(75)
@@ -68,8 +74,10 @@ def deposit(tents):
     tent = (float(tents) * float(0.10))
     return round(tent, 2)
 
+
 def total(tents):
-    """ returns the total price of a tent, tent price plus
+    """ int -> float
+    returns the total price of a tent, tent price plus
     deposit plus sales tax.
     >>> total(50)
     3.5
@@ -77,8 +85,9 @@ def total(tents):
     tent = (float(tents) * float(0.07))
     return round(tent, 2)
 
+
 def actual_cost(tent):
-    ''' string -> string 
+    ''' string -> int 
     Prices of the avalible tents
     >>> actual_cost('1')
     150
@@ -121,5 +130,16 @@ def actual_cost(tent):
     elif tent == '11' or tent.lower() == 'eleven':
         return tent11
     elif tent == '12' or tent.lower() == 'twelve':
-        return tent12 
+        return tent12
 
+
+def sum_all(everything):
+    """ str -> float
+    shows revenue for all
+    >>> sum_all([['a', 23],['b', 25]])
+    48
+    """
+    price = 0
+    for item in everything:
+        price += item[1]
+    return price
