@@ -7,13 +7,27 @@ def keep_history(tent_size, amount):
         file.write(message)
 
 
-def in_history():
-    left = []
+# def in_history():
+#     left = []
+#     with open('history.txt', 'r') as file:
+#         file.readline()
+#         lines = file.readlines()
+#     for line in lines:
+#         split_string = line.strip().split(', ')
+#         left.append([
+#             split_string[0],
+#             int(str(split_string[1].strip().replace('$', '')))
+#         ])
+#     return left
+
+
+def in_history_revenue():
     with open('history.txt', 'r') as file:
         file.readline()
         lines = file.readlines()
+    left = []
     for line in lines:
-        split_string = line.strip().split(', ')
+        split_string = line.split(', ')
         left.append(
             [split_string[0],
              float(split_string[1].strip().replace('$', ''))])
@@ -63,15 +77,3 @@ def refill(type_tent, how_many):
 
     with open('inventory.txt', 'w') as file:
         file.write(message)
-
-
-def revenue_log():
-    """return float value of total dollars spent"""
-    price = 0
-    with open('history.txt', 'r') as file:
-        file.readline
-        lines = file.readline
-        for item in lines:
-            item[1] = float(item[1]) + float(item[1])
-            price += item[1]
-    return price
